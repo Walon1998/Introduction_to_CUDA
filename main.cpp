@@ -38,7 +38,7 @@ void f(int n, int *x, bool *y) {
 }
 
 int main(void) {
-    int N = 1 << 5; // 1M elements
+    int N = 1 << 20; // 1M elements
 //    int N = 1 << 20; // 1M elements
 
     int *x = new int[N];
@@ -47,7 +47,7 @@ int main(void) {
 
     // initialize x and y arrays on the host
     for (int i = 0; i < N; i++) {
-        x[i] = i % 100;
+        x[i] = i % 1000;
 
     }
 
@@ -63,15 +63,16 @@ int main(void) {
     std::cout << "Array y: " << *y << std::endl;
 
     std::cout << "Array x: ";
-    for (int j = 0; j < N; ++j) {
+    for (int j = 0; j < 10; ++j) {
         std::cout << x[j] << ",";
     }
 
     std::cout << "\n";
     std::cout << "Array y: ";
-    for (int j = 0; j < N; ++j) {
+    for (int j = 0; j < 10; ++j) {
         std::cout << y[j] << ",";
     }
+    std::cout << "\n";
     // Check for errors (all values should be 3.0f)
 //        float maxError = 0.0f;
 //        for (int i = 0; i < N; i++)
